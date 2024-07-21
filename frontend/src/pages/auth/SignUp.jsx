@@ -18,6 +18,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setCredentials } from "@/redux/features/auth/authSlice";
 import { useSignupMutation } from "@/redux/api/users";
 import { useState, useEffect } from "react";
+import { ArrowLeft } from "lucide-react";
 
 const SignUp = () => {
   const [name, setName] = useState("");
@@ -80,6 +81,11 @@ const SignUp = () => {
       onSubmit={submitHandler}
       className="flex justify-center items-center h-[100vh] px-6 xl:px-0 transition-all ease-in-out"
     >
+      <Link to="/">
+        <Button className="absolute left-4 top-4" variant="outline">
+          <ArrowLeft size={20} />
+        </Button>
+      </Link>
       <Card className="w-full md:w-[30rem] lg:w-[30rem] mx-auto p-5">
         <CardHeader className="text-center">
           <CardTitle>Create an account</CardTitle>
